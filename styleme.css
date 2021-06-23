@@ -1,0 +1,52 @@
+body {
+	background-color: #F7E7FF;
+}
+
+h1 {
+	font-family: Giorgia;
+	color: #6E0D9D;
+}
+
+p {
+	font-family: sans-serif;
+	color: #3B0357;
+}
+
+h2 {
+	color: #8D44B2;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	font-Style: italic;
+}
+
+ol { /* https://stackoverflow.com/questions/5425425/how-can-i-center-the-text-but-not-the-number-label-of-an-html-ordered-list/5426130#5426130 */
+    counter-reset: 4;
+}
+
+.special {
+	color: #B80C96;
+	font-Style: italic;
+}
+
+.column {
+	display: inline-block;
+	padding: 10px;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+p::first-letter {
+	font-size: 150%;
+}
