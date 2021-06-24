@@ -1,0 +1,15 @@
+@charset "UTF-8";
+#outer {
+	border: 2px dashed black;
+	padding: 10px;
+	display: grid;
+  	grid-template-columns: max-content max-content max-content;
+}
+
+
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	margin: 10px;
+}
