@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" type="text/css"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <form>
+        <div class="form-group">
+            <label for="email">Email address</label> <br>
+
+            <input type="email" class="form-control" id="email" placeholder="Enter email"> <br>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.</small><br>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label> <br>
+            <input type="password" class="form-control" id="password" placeholder="Password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
+        </div>
+        <div class="form-group">
+            <label for="homepage">Homepage</label><br>
+            <input type="url" id="homepage" class="form-control" name="homepage"><br>
+            </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="checkOut" name="validate">
+            <label for="checkOut">Check me out</label><br>
+        </div>
+       
+        <input type="submit" class="btn btn-primary">
+
+    </form>
+</body>
+
+</html>
