@@ -103,11 +103,11 @@ function myFunctionTest(expected, found) {
   
   function reverse(str) {
     if (typeof str !== "string") return;
-  
-    let result = "";
-    for (let i = str.length - 1; i >= 0; i--) result += str[i];
+    
+    let result = str.split("").reverse().join("");
     return result;
-  }
+}
+
   
   console.log(
     "Expected output of reverse('WAP') is PAW  " +
