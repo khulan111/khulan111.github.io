@@ -12685,7 +12685,7 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],68:[function(require,module,exports){
-module.exports = require("./lib/_stream_duplex.js")
+module.exports = require("./lib/_stream_duplex.js.js")
 
 },{"./lib/_stream_duplex.js":69}],69:[function(require,module,exports){
 // a duplex stream is just a stream that is both readable and writable.
@@ -14506,7 +14506,7 @@ BufferList.prototype.concat = function (n) {
   return ret;
 };
 },{"buffer":44,"buffer-shims":43}],75:[function(require,module,exports){
-module.exports = require("./lib/_stream_passthrough.js")
+module.exports = require("./lib/_stream_passthrough.js.js")
 
 },{"./lib/_stream_passthrough.js":70}],76:[function(require,module,exports){
 (function (process){
@@ -14515,13 +14515,13 @@ var Stream = (function (){
     return require('st' + 'ream'); // hack to fix a circular dependency issue when used with browserify
   } catch(_){}
 }());
-exports = module.exports = require('./lib/_stream_readable.js');
+exports = module.exports = require('./lib/_stream_readable.js.js');
 exports.Stream = Stream || exports;
 exports.Readable = exports;
-exports.Writable = require('./lib/_stream_writable.js');
-exports.Duplex = require('./lib/_stream_duplex.js');
-exports.Transform = require('./lib/_stream_transform.js');
-exports.PassThrough = require('./lib/_stream_passthrough.js');
+exports.Writable = require('./lib/_stream_writable.js.js');
+exports.Duplex = require('./lib/_stream_duplex.js.js');
+exports.Transform = require('./lib/_stream_transform.js.js');
+exports.PassThrough = require('./lib/_stream_passthrough.js.js');
 
 if (!process.browser && process.env.READABLE_STREAM === 'disable' && Stream) {
   module.exports = Stream;
@@ -14529,10 +14529,10 @@ if (!process.browser && process.env.READABLE_STREAM === 'disable' && Stream) {
 
 }).call(this,require('_process'))
 },{"./lib/_stream_duplex.js":69,"./lib/_stream_passthrough.js":70,"./lib/_stream_readable.js":71,"./lib/_stream_transform.js":72,"./lib/_stream_writable.js":73,"_process":67}],77:[function(require,module,exports){
-module.exports = require("./lib/_stream_transform.js")
+module.exports = require("./lib/_stream_transform.js.js")
 
 },{"./lib/_stream_transform.js":72}],78:[function(require,module,exports){
-module.exports = require("./lib/_stream_writable.js")
+module.exports = require("./lib/_stream_writable.js.js")
 
 },{"./lib/_stream_writable.js":73}],79:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
