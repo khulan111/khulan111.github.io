@@ -9,10 +9,10 @@ describe("String.filter", () => {
         '"This house is not nice!'.filter("not")
       );
     });
-    it("It removes banned word 'and' from '\"Marry and James took the bus' and returning '\"Marry James took the bus'", () => {
+    it("It removes banned word 'and' from '\"Bold and Amy took the bus' and returning '\"Bold Amy took the bus'", () => {
       assert.strictEqual(
-        '"Marry James took the bus.',
-        '"Marry and James took the bus.'.filter("and")
+        '"Bold Amy took the bus.',
+        '"Bold and Amy took the bus.'.filter("and")
       );
     });
   });
@@ -38,16 +38,16 @@ describe("String.filter", () => {
   
   // Exercise 3
   describe("Teacher.prototype.teach", () => {
-    it("Dulguun is now teaching WAP", () => {
+    it("Khulan is now teaching WAP", () => {
       const charles = new Teacher();
-      charles.initialize("Dulguun", 23);
-      assert.strictEqual(charles.teach("WAP"), "Dulguun is now teaching WAP");
+      charles.initialize("Khulan", 36);
+      assert.strictEqual(charles.teach("WAP"), "Khulan is now teaching WAP");
     });
   
-    it("MR.D is now teaching EA", () => {
+    it("John is now teaching Math", () => {
       const charles = new Teacher();
-      charles.initialize("MR.D", 23);
-      assert.strictEqual(charles.teach("EA"), "MR.D is now teaching EA");
+      charles.initialize("John", 40);
+      assert.strictEqual(charles.teach("Math"), "John is now teaching Math");
     });
   });
   
