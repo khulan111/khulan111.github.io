@@ -1,87 +1,32 @@
-"use strict";
-$(document).ready(function () {
-  class Maze {
-    constructor() {
-      this.started = false;
-      this.lost = null;
-    }
+$(document).ready(function() {
+	var start = false;
+	$("#start").click(function() {
+		start = true;
+		$("#status").text("Game started, GOOD LUCK :D ");
+		$(".boundary").removeClass("youlose");
+	});
+	$(".boundary").mouseover(function() {
+		lose();
+	});
 
-    getStarted() {
-      this.started = true;
-      $("#status").text("Game started...");
-    }
+	$("body").mouseover(function() {
+		if (event.target.id != ("maze") && event.target.id != ("start") && event.target.id != ("end")) {
+			lose();
+		}
+	});
 
-    stop() {
-      this.started = false;
-    }
+	function lose() {
+		if (start) {
+			start = false;
+			$("#status").text("You lose :(");
+			$(".boundary").addClass("youlose");
+		}
+	}
+	$("#end").mouseover(function() {
+		if (start) {
+			start = false;
+			$("#status").text("You win :)");
+		}
+	});
 
-    isStarted() {
-      return this.started;
-    }
-
-    lose() {
-      this.lost = true;
-    }
-
-    win() {
-      this.lost = false;
-    }
-
-    restart() {
-      this.lost = null;
-    }
-
-    isLost() {
-      return this.lost;
-    }
-  }
-
-  function restart() {
-    $("#status").text('Click the "S" to begin.');
-    $(".boundary").removeClass("youlose");
-    maze.stop();
-    maze.restart();
-  }
-
-  function lose() {
-    maze.lose();
-    maze.stop();
-    $(".boundary").addClass("youlose");
-    $("#status").text("Sorry, you lost :(");
-  }
-
-  function win() {
-    $(".boundary").removeClass("youlose");
-    $("#status").text("You win! :)");
-    maze.win();
-    maze.stop();
-  }
-
-  const maze = new Maze();
-
-  $(".boundary")
-    .mouseenter(function () {
-      if (!maze.isStarted()) $(this).addClass("youlose");
-
-      if (maze.isStarted() && !maze.isLost()) lose();
-    })
-    .mouseleave(function () {
-      if (!maze.isStarted() && !maze.isLost()) $(this).removeClass("youlose");
-    });
-
-  $("#start")
-    .click(function () {
-      maze.getStarted();
-    })
-    .mouseenter(function () {
-      if (!maze.isStarted()) restart();
-    });
-
-  $("#end").mouseenter(function () {
-    if (maze.isStarted() && maze.isLost() === null) win();
-  });
-
-  $("#maze").mouseleave(function () {
-    if (maze.isStarted()) lose();
-  });
 });
