@@ -1,6 +1,5 @@
-"use strict";
-
 $(function () {
+    "use strict";
     $('#start').click(function () {
         const $walls = $("#maze .boundary");
         const $status = $('#status');
