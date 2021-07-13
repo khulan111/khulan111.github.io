@@ -1,41 +1,13 @@
-
-<!DOCTYPE html>
-<html lang='en'>
-
-<head>
-    <meta charset="utf-8">
-    <title>W4D1</title>
-</head>
-
-<body>
-    <h1>Cookies</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Key</th>
-                <th>Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% for (key in cookies) { %>
-                <tr>
-                    <td>
-                        <%= key %>
-                    </td>
-                    <td>
-                        <%= cookies[key] %>
-                    </td>
-                    <% } %>
-                </tr>
-        </tbody>
-    </table>
-    <br>
-
-    <form action="add" method="post">
-        <label>Key: <input name="key" type="text"></label>
-        <label>Value: <input name="value" type="text"></label>
-        <button type="submit">Add Cookie</button>
+<%- include('head.ejs') %>
+    <form action="/addCookie" method="post">
+        <label for="key">Key</label>
+        <input type="text" name="key" required>
+        <label for="value">Value</label>
+        <input type="text" name="value">
+        <input type="submit" value="Add Cookie">
     </form>
-</body>
 
-</html>
+    <form action="/remove" method="post">
+        <input type="submit" value="remove">
+    </form>
+    <%- include('end.ejs') %>
